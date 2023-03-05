@@ -4,9 +4,9 @@ import * as dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import bodyParser = require('body-parser');
 import { getAllRouter } from './routes/getAllRouter';
+import { addOneRouter } from './routes/addOneRouter';
 
 dotenv.config();
-// const uri = process.env.MONGO_URI || 'mongodb+srv://scladnik:McPaW5Cuovp7XWEq@mongodbcluster.t6wxcpr.mongodb.net/UsersDB?retryWrites=true&w=majority';
 const uri = process.env.MONGO_URI || 'mongodb+srv://scladnik:McPaW5Cuovp7XWEq@mongodbcluster.t6wxcpr.mongodb.net/GithubUsersDB?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 8080;
 
@@ -25,6 +25,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/getAll', getAllRouter);
+app.use('/addOne', addOneRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);

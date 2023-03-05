@@ -2,32 +2,32 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 const userSchema = new Schema({
+  login: {
+    type: String,
+    required: true,
+  },
+  created_at: {
+    type: Date,
+    required: true,
+  },
+  html_url: {
+    type: String,
+    required: true,
+  },
   name: {
     type: String,
     required: true,
   },
-  email: {
+  public_repos: {
+    type: Number,
+    required: true,
+  },
+  repos_url: {
     type: String,
     required: true,
   },
-  password: {
-    type: String,
-    required: true,
-  },
-  token: {
-    type: String,
-    required: true,
-  },
-  role: {
-    type: String,
-    required: true,
-  },
-  subordinatesId: {
-    type: [],
-    required: true,
-  },
-  bossId: {
-    type: [],
+  updated_at: {
+    type: Date,
     required: true,
   },
 });

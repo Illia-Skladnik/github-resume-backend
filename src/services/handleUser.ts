@@ -7,10 +7,9 @@ export const handleUser = async (body: any) => {
   const userInDB = await User.findOne({ login: login });
 
   if (!userInDB) {
-    addUser(login);
-    return;
+    return await addUser(login);
   }
 
   
-  editUser(login);
+  return editUser(login);
 };

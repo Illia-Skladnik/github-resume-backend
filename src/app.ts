@@ -2,7 +2,6 @@ import * as express from 'express';
 import * as cors from 'cors';
 import * as dotenv from 'dotenv';
 import mongoose from 'mongoose';
-import bodyParser = require('body-parser');
 import { getAllRouter } from './routes/getAllRouter';
 import { handleUserRouter } from './routes/handleUserRouter';
 
@@ -23,7 +22,6 @@ connect();
 
 const app = express();
 app.use(cors());
-app.use(bodyParser.json());
 app.use('/getAll', getAllRouter);
 app.use('/handleUser', handleUserRouter);
 
